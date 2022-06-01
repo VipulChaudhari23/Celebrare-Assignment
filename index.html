@@ -1,0 +1,260 @@
+<!-- Vipul Chaudhari Text editor -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <script src="https://kit.fontawesome.com/0e88137a5c.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="style.css"> 
+
+    <title>Celebrare Assignment</title>
+</head>
+
+<body>
+
+
+    <!-- Nav bar -->
+    <header>
+        <nav>
+
+            
+
+            <div class="logo">
+                <img src="./ASSETS/Logo.png" alt="">
+            </div>
+
+            <div class="navContainer">
+
+                <a href="" class="anchor">Wedding Cards</a>
+                <a href="" class="anchor">Birthday Cards</a>
+                <a href="" class="anchor">Feeling Cards</a>
+                <a href="" class="anchor">Anniversary Cards</a>
+
+            </div>
+
+            <div class="loginContainer">
+                <a class="anchor" href="">Login / Signup</a>
+            </div>
+
+
+        </nav>
+        <div id="navbar">
+            <a href="" class="anchor">Wedding Cards</a>
+            <a href="" class="anchor">Birthday Cards</a>
+            <a href="" class="anchor">Feeling Cards</a>
+            <a href="" class="anchor">Anniversary Cards</a>
+            <a class="anchor" href="">Login / Signup</a>
+        </div>
+    </header>
+    <!-- Ends !-->
+
+
+
+    <div id="main">
+
+        <div class="top">
+
+            <div class="heading">Digital Card Details</div>
+
+        </div>
+
+
+        <div class="subContainer">
+
+            <div class="swiper mySwiper carouselContainer">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide carouselPageDiv">
+                        <img src="./ASSETS/Page1.jpg" />
+                    </div>
+                    <div class="swiper-slide carouselPageDiv">
+                        <img src="./ASSETS/Page2.jpg" />
+                    </div>
+                    <div class="swiper-slide carouselPageDiv">
+                        <img src="./ASSETS/Page3.jpg" />
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="cardtitle">
+
+                <div class="heading">Card Title</div>
+
+                <div class="pricing">
+                    <div class="price">
+                        <div class="newPrice">$499</div>
+                        <div class="oldPrice">$2000</div>
+                    </div>
+                    <div class="discount">75% Off</div>
+                </div>
+
+                <div class="content">
+                    Donec eu ornare mi. Sed finibus
+                    condimentum mauris, ut dictum
+                    eros maximus vitae. Nullam
+                    condimentum tortor ac elit
+                </div>
+
+                <button class="trybutton">Try this Card</button>
+
+            </div>
+
+
+
+            <div class="cardtitle">
+
+                <button class="trybutton">Try this Card</button>
+                <div class="pricing">
+                    <div class="price">
+                        <div class="newPrice">$499</div>
+                        <div class="oldPrice">$2000</div>
+                    </div>
+                    <div class="discount">75% Off</div>
+                </div>
+
+                <div class="heading">Card Title</div>
+
+
+                <div class="content">
+                    Donec eu ornare mi. Sed finibus
+                    condimentum mauris, ut dictum
+                    eros maximus vitae. Nullam
+                    condimentum tortor ac elit
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="featuresHeading">Features</div>
+    <div class="featurespart">
+
+        <div class="feature">
+            <div class="circleshadow"></div>
+            <div class="text">Create your cardin just 5 mins</div>
+        </div>
+
+        <div class="feature">
+            <div class="circleshadow"></div>
+            <div class="text">Customize the Text with "Edit this Page" Option</div>
+        </div>
+
+        <div class="feature">
+            <div class="circleshadow"></div>
+            <div class="text">Editing is available after purchase also</div>
+        </div>
+
+    </div>
+
+
+
+
+    <div id="modalContainer">
+
+        <div id="modal">
+
+            <div id="closeButton"><i class="fa-solid fa-x"></i></div>
+
+            <div class="subContainer">
+
+                <div class="swiper mySwiper carouselContainer">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide carouselPageDiv">
+                            <img src="./ASSETS/Page1.jpg" />
+                        </div>
+                        <div class="swiper-slide carouselPageDiv">
+                            <img src="./ASSETS/Page1.jpg" />
+                        </div>
+                        <div class="swiper-slide carouselPageDiv">
+                            <img src="./ASSETS/Page1.jpg" />
+                        </div>
+                    </div>
+                </div>
+
+
+                
+
+            </div>
+
+
+
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+
+
+<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+<script src="/jquery.js"></script>
+<script>
+
+
+    let toggle = false;
+    $("#toggleButton").click(() => {
+        if (toggle) {
+            $("#navbar").css({ "height": "0" })
+            toggle = false;
+        }
+        else {
+            $("#navbar").css({ "height": "19rem" })
+            toggle = true;
+        }
+    });
+
+
+
+
+    let modalCLosed = true
+
+    $("#closeButton").click(() => {
+        $("#modalContainer").css("display", "none")
+        $("body").css("overflow", "auto")
+    })
+
+    $(".trybutton").click(() => {
+        if ($(window).width() > 1050) {
+            $("#modalContainer").css("display", "flex")
+            $("body").css("overflow", "hidden")
+        }
+        else {
+            alert("Cannot open modal below 1050px screen")
+        }
+
+    })
+
+
+
+
+    var swiper = new Swiper(".mySwiper", {
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        coverflowEffect: {
+            rotate: 20,
+            stretch: 0,
+            depth: 700,
+            modifier: 1,
+            slideShadows: true,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+        },
+    });
+</script>
